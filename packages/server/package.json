@@ -1,12 +1,38 @@
 {
-  "name": "@agent-chrome-test/server",
+  "name": "@dtk/agent-chrome-test",
   "version": "0.1.0",
-  "private": true,
+  "description": "MCP server + Chrome extension bridge that lets AI agents control and test in your real Chrome browser",
+  "keywords": [
+    "mcp",
+    "chrome",
+    "browser-automation",
+    "testing",
+    "ai-agent",
+    "claude",
+    "visual-regression",
+    "playwright-alternative",
+    "extension"
+  ],
+  "license": "MIT",
+  "author": "hobbitTk",
+  "homepage": "https://github.com/hobbitTk/agent-chrome-test#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hobbitTk/agent-chrome-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hobbitTk/agent-chrome-test/issues"
+  },
   "type": "module",
   "main": "dist/index.js",
   "bin": {
     "agent-chrome-test": "dist/bin/agent-chrome-test.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -14,7 +40,6 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@agent-chrome-test/shared": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.12.1",
     "pixelmatch": "^6.0.0",
     "pngjs": "^7.0.0",
@@ -22,9 +47,13 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@agent-chrome-test/shared": "workspace:*",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
     "@types/ws": "^8.5.0",
     "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
