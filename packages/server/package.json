@@ -1,0 +1,30 @@
+{
+  "name": "@agent-chrome-test/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "agent-chrome-test": "dist/bin/agent-chrome-test.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@agent-chrome-test/shared": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0",
+    "ws": "^8.18.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/pixelmatch": "^5.2.6",
+    "@types/pngjs": "^6.0.5",
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.7.0"
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.agent-chrome-test/
+*.tsbuildinfo
+.DS_Store

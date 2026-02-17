@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 13px;
+      color: #1a1a1a;
+      background: #fafafa;
+    }
+    h1 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .status.connected { background: #dcfce7; color: #166534; }
+    .status.disconnected { background: #f3f4f6; color: #6b7280; }
+    .status.error { background: #fef2f2; color: #991b1b; }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .connected .dot { background: #22c55e; }
+    .disconnected .dot { background: #9ca3af; }
+    .error .dot { background: #ef4444; }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: 'SF Mono', Monaco, monospace;
+    }
+    input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #1a1a1a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    button:hover { background: #333; }
+    .info {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Agent Chrome Test</h1>
+
+  <div id="status" class="status disconnected">
+    <span class="dot"></span>
+    <span id="statusText">Disconnected</span>
+  </div>
+
+  <div class="form-group">
+    <label>Server Port</label>
+    <input type="number" id="port" value="3695" min="1024" max="65535">
+  </div>
+
+  <div class="form-group">
+    <label>Auth Token</label>
+    <input type="text" id="token" placeholder="Paste token from server terminal">
+  </div>
+
+  <button id="connect">Connect</button>
+
+  <div class="info">
+    Start the server with <code>npx agent-chrome-test</code> and paste the auth token shown in the terminal.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
