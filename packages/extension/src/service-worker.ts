@@ -85,6 +85,8 @@ async function saveConfig(token: string, serverPort: number): Promise<void> {
 function isUrlAllowed(url: string): boolean {
   try {
     const parsed = new URL(url);
+    // Allow local file:// URLs unconditionally
+    if (parsed.protocol === 'file:') return true;
     return allowedOrigins.some((origin) => {
       const parsedOrigin = new URL(origin.includes('://') ? origin : `https://${origin}`);
       return (
